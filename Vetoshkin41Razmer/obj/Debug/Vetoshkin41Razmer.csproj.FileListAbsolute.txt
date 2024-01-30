@@ -18,3 +18,10 @@ D:\3 курс\ИСП-3221\Ветошкин\Vetoshkin41razmer\Vetoshkin41Razmer\o
 D:\3 курс\ИСП-3221\Ветошкин\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\App.baml
 D:\3 курс\ИСП-3221\Ветошкин\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\AddEditPage.baml
 D:\3 курс\ИСП-3221\Ветошкин\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\ProductPage.baml
+D:\3 курс\ИСП-3221\Ветошкин\Vetoshkin41razmer\Vetoshkin41Razmer\bin\Debug\EntityFramework.dll
+D:\3 курс\ИСП-3221\Ветошкин\Vetoshkin41razmer\Vetoshkin41Razmer\bin\Debug\EntityFramework.SqlServer.dll
+D:\3 курс\ИСП-3221\Ветошкин\Vetoshkin41razmer\Vetoshkin41Razmer\bin\Debug\EntityFramework.xml
+D:\3 курс\ИСП-3221\Ветошкин\Vetoshkin41razmer\Vetoshkin41Razmer\bin\Debug\EntityFramework.SqlServer.xml
+D:\3 курс\ИСП-3221\Ветошкин\Vetoshkin41razmer\Vetoshkin41Razmer\bin\Debug\ru\EntityFramework.resources.dll
+D:\3 курс\ИСП-3221\Ветошкин\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\Vetoshkin41Razmer_Content.g.cs
+D:\3 курс\ИСП-3221\Ветошкин\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\Vetoshkin41Razmer.csproj.CopyComplete

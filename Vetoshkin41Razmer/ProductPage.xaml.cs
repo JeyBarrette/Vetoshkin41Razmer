@@ -23,6 +23,9 @@ namespace Vetoshkin41Razmer
         public ProductPage()
         {
             InitializeComponent();
+
+            var currentProducts = Vetoshkin_41razmerEntities.GetContext().Product.ToList();
+            ProductListView.ItemsSource = currentProducts;
         }
     }
 }

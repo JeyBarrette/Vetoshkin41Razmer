@@ -13,7 +13,8 @@
             <RowDefinition Height="30"></RowDefinition>
         </Grid.RowDefinitions>
         <Image Source="Images/logo.png" HorizontalAlignment="Left"></Image>
-        <TextBlock Text="41 Размер" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-        <Frame Grid.Row="1" Name="MainFrame"></Frame>
+        <TextBlock Text="ООО 41 Размер" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <Frame Grid.Row="1" Name="MainFrame" ContentRendered="MainFrame_ContentRendered" NavigationUIVisibility="Hidden"></Frame>
+        <Button Name="BackBtn" Content="Назад" HorizontalAlignment="Right" Margin="5" Click="BackBtn_Click"></Button>
     </Grid>
 </Window>
