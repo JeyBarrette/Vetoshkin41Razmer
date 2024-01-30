@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vetoshkin41Razmer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Vetoshkin41Razmer" Height="450" Width="800" Icon="Images/icon.ico" MinHeight="450" MinWidth="800" FontFamily="Comic Sans MS">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Source="Images/logo.png" HorizontalAlignment="Left"></Image>
+        <TextBlock Text="41 Размер" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <Frame Grid.Row="1" Name="MainFrame"></Frame>
     </Grid>
 </Window>

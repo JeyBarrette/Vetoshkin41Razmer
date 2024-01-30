@@ -16,15 +16,13 @@ using System.Windows.Shapes;
 namespace Vetoshkin41Razmer
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для ProductPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ProductPage : Page
     {
-        public MainWindow()
+        public ProductPage()
         {
             InitializeComponent();
-            MainFrame.Navigate(new ProductPage());
-            FrameManager.MainFrame = MainFrame;
         }
     }
 }

@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:Vetoshkin41Razmer"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="Background" Value="#FFCC6600"></Setter>
+            <Setter Property="FontFamily" Value="Comic Sant MS"></Setter>
+        </Style>
     </Application.Resources>
 </Application>
