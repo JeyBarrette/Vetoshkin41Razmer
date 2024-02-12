@@ -16,11 +16,9 @@ namespace Vetoshkin41Razmer
     public partial class Vetoshkin_41razmerEntities : DbContext
     {
         private static Vetoshkin_41razmerEntities _context;
-
         public static Vetoshkin_41razmerEntities GetContext()
         {
-            if (_context == null)
-                _context = new Vetoshkin_41razmerEntities();
+            if (_context == null) _context = new Vetoshkin_41razmerEntities();
             return _context;
         }
 

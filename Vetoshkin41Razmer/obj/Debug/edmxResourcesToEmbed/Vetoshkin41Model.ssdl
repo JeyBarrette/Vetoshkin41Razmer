@@ -40,7 +40,7 @@
     <Property Name="ProductArticleNumber" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="ProductName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Unit" Type="nvarchar" MaxLength="10" Nullable="false" />
-    <Property Name="ProductCost" Type="decimal" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="ProductCost" Type="decimal" Precision="19" Scale="4" Nullable="false" />
     <Property Name="ProductDiscountAmount" Type="tinyint" />
     <Property Name="ProductManufacturer" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ProductProvider" Type="nvarchar(max)" Nullable="false" />

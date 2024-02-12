@@ -25,3 +25,29 @@ D:\3 курс\ИСП-3221\Ветошкин\Vetoshkin41razmer\Vetoshkin41Razmer\b
 D:\3 курс\ИСП-3221\Ветошкин\Vetoshkin41razmer\Vetoshkin41Razmer\bin\Debug\ru\EntityFramework.resources.dll
 D:\3 курс\ИСП-3221\Ветошкин\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\Vetoshkin41Razmer_Content.g.cs
 D:\3 курс\ИСП-3221\Ветошкин\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\Vetoshkin41Razmer.csproj.CopyComplete
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\bin\Debug\Vetoshkin41Razmer.exe.config
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\bin\Debug\Vetoshkin41Razmer.exe
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\bin\Debug\Vetoshkin41Razmer.pdb
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\bin\Debug\EntityFramework.dll
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\bin\Debug\EntityFramework.xml
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\Vetoshkin41Razmer.csprojAssemblyReference.cache
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\AddEditPage.g.cs
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\MainWindow.g.cs
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\ProductPage.g.cs
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\App.g.cs
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\Vetoshkin41Razmer_Content.g.cs
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\Vetoshkin41Razmer_MarkupCompile.cache
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\Vetoshkin41Razmer_MarkupCompile.lref
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\App.baml
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\AddEditPage.baml
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\MainWindow.baml
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\ProductPage.baml
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\Vetoshkin41Razmer.g.resources
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\Vetoshkin41Razmer.Properties.Resources.resources
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\Vetoshkin41Razmer.csproj.GenerateResource.cache
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\Vetoshkin41Razmer.csproj.CopyComplete
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\Vetoshkin41Razmer.exe
+C:\Users\olegp\Source\Repos\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\Vetoshkin41Razmer.pdb
