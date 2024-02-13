@@ -10,12 +10,27 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <WrapPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0">
+
+            <StackPanel Orientation="Horizontal" Margin="5, 0">
+                <TextBlock Width="auto" Text="Вы авторизованы как " ></TextBlock>
+                <TextBlock Name="FIOTB" Width="auto" Margin="5, 0"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="5, 0">
+                <TextBlock Width="200" Text="Роль: " ></TextBlock>
+                <TextBlock Name="RoleTB" Width="auto" Margin="-140, 0"></TextBlock>
+            </StackPanel>
+            
+        </WrapPanel>
+
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
             <StackPanel Margin="5" Orientation="Horizontal">
 
                 <TextBlock Name="ProdCount" Text="кол-во "></TextBlock>
@@ -47,7 +62,7 @@
             </StackPanel>
         </WrapPanel>
         
-        <ListView Name="ProductListView" Grid.Row="1">
+        <ListView Name="ProductListView" Grid.Row="2">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>

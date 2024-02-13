@@ -23,7 +23,7 @@ namespace Vetoshkin41Razmer
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new ProductPage());
+            MainFrame.Navigate(new AuthPage());
             FrameManager.MainFrame = MainFrame;
         }
 
