@@ -5,17 +5,55 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Vetoshkin41Razmer"
       mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="850"
+      d:DesignHeight="600" d:DesignWidth="980"
       Title="ProductPage">
 
     <Grid>
-        <ListView Name="ProductListView">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <StackPanel Margin="5" Orientation="Horizontal">
+
+                <TextBlock Name="ProdCount" Text="кол-во "></TextBlock>
+                <TextBlock Name="ProdRN" Text=""></TextBlock>
+                <TextBlock Text=" из "></TextBlock>
+                <TextBlock Name="ProdOverall" Text=""></TextBlock>
+                
+                <StackPanel Orientation="Vertical" Margin="15, 0">
+                    <TextBlock Name="SearchBarText" Text="поиск по наименованию" FontSize="20"></TextBlock>
+                    <TextBox Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged" Width="240" FontSize="20" FontFamily="Comic Sant MS"></TextBox>
+                </StackPanel>
+
+                <StackPanel HorizontalAlignment="Left" Orientation="Vertical" Margin="5">
+                    <RadioButton Name="RBClear" GroupName="Sort" Content="без сортировки" FontSize="15" Checked="RBClear_Checked"></RadioButton>
+                    <RadioButton Name="RBTop" GroupName="Sort" Content="по возрастанию стоимости" FontSize="15" Checked="RBTop_Checked"></RadioButton>
+                    <RadioButton Name="RBBottom" GroupName="Sort" Content="по убыванию стоимости" FontSize="15" Checked="RBBottom_Checked"></RadioButton>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="15, 0">
+                    <TextBlock Name="DiscountFilterText" Text="фильтрация по скидке" FontSize="20"></TextBlock>
+                    <ComboBox Name="DiscountFilter" Width="220" Height="30" FontSize="20" HorizontalAlignment="Left" SelectionChanged="DiscountFilter_SelectionChanged">
+                        <TextBlock> Все диапазоны</TextBlock>
+                        <TextBlock> от 0 до 9,99%</TextBlock>
+                        <TextBlock> от 10 до 14,99%</TextBlock>
+                        <TextBlock> от 15%</TextBlock>
+                    </ComboBox>
+                </StackPanel>
+                
+            </StackPanel>
+        </WrapPanel>
+        
+        <ListView Name="ProductListView" Grid.Row="1">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="480"></ColumnDefinition>
+                            <ColumnDefinition Width="580"></ColumnDefinition>
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
@@ -44,8 +82,8 @@
                         <StackPanel Orientation="Vertical" Grid.Column="2" VerticalAlignment="Center" Grid.RowSpan="3">
                             <TextBlock Text="Скидка" Margin="25" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <TextBlock Text="{Binding ProductCurrentDiscount}" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
-                                <TextBlock Text="%" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
+                                <TextBlock Text="{Binding ProductCurrentDiscount}" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="30"></TextBlock>
+                                <TextBlock Text="%" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="30"></TextBlock>
                             </StackPanel>
                         </StackPanel>
                     </Grid>

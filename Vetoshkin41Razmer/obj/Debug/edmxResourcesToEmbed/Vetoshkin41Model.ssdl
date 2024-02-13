@@ -8,9 +8,7 @@
     <Property Name="OrderDeliveryDate" Type="date" Nullable="false" />
     <Property Name="OrderDate" Type="date" Nullable="false" />
     <Property Name="OrderPickupPoint" Type="int" Nullable="false" />
-    <Property Name="Surname" Type="nvarchar" MaxLength="50" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" />
-    <Property Name="Patronymic" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserID" Type="int" />
     <Property Name="OrderCodeNumber" Type="int" />
     <Property Name="OrderStatus" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
@@ -40,7 +38,7 @@
     <Property Name="ProductArticleNumber" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="ProductName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Unit" Type="nvarchar" MaxLength="10" Nullable="false" />
-    <Property Name="ProductCost" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ProductCost" Type="decimal" Precision="19" Scale="2" Nullable="false" />
     <Property Name="ProductDiscountAmount" Type="tinyint" />
     <Property Name="ProductManufacturer" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ProductProvider" Type="nvarchar(max)" Nullable="false" />
@@ -118,6 +116,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Order_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="Хранилище Vetoshkin_41razmerModelContainer">
     <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OrderProduct" EntityType="Self.OrderProduct" Schema="dbo" store:Type="Tables" />
@@ -139,6 +149,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_Order_PickupPoint" Association="Self.FK_Order_PickupPoint">
       <End Role="PickupPoint" EntitySet="PickupPoint" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_User" Association="Self.FK_Order_User">
+      <End Role="User" EntitySet="User" />
       <End Role="Order" EntitySet="Order" />
     </AssociationSet>
   </EntityContainer>

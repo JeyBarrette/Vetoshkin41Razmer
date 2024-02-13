@@ -26,6 +26,79 @@ namespace Vetoshkin41Razmer
 
             var currentProducts = Vetoshkin_41razmerEntities.GetContext().Product.ToList();
             ProductListView.ItemsSource = currentProducts;
+            ProdOverall.Text = Convert.ToString(currentProducts.Count);
+            DiscountFilter.SelectedIndex = 0;
+            RBClear.IsChecked = true;
+            UpdateProducts();
+        }
+
+        private void UpdateProducts()
+        {
+            var currentProducts = Vetoshkin_41razmerEntities.GetContext().Product.ToList();
+            currentProducts = currentProducts.Where(p => p.ProductName.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
+
+            if (RBClear.IsChecked.Value)
+            {
+
+            }
+
+            if (RBTop.IsChecked.Value)
+            {
+                currentProducts = currentProducts.OrderBy(p => p.ProductCost).ToList();
+            }
+
+            if (RBBottom.IsChecked.Value)
+            {
+                currentProducts = currentProducts.OrderByDescending(p => p.ProductCost).ToList();
+            }
+
+            if (DiscountFilter.SelectedIndex == 0)
+            {
+
+            }
+
+            if (DiscountFilter.SelectedIndex == 1)
+            {
+                currentProducts = currentProducts.Where(p => (p.ProductCurrentDiscount >= 0 && p.ProductCurrentDiscount < 10)).ToList();
+            }
+
+            if (DiscountFilter.SelectedIndex == 2)
+            {
+                currentProducts = currentProducts.Where(p => (p.ProductCurrentDiscount >= 10 && p.ProductCurrentDiscount < 15)).ToList();
+            }
+
+            if (DiscountFilter.SelectedIndex == 3)
+            {
+                currentProducts = currentProducts.Where(p => (p.ProductCurrentDiscount >= 15)).ToList();
+            }
+
+            ProdRN.Text = Convert.ToString(currentProducts.Count);
+            ProductListView.ItemsSource = currentProducts;
+        }
+
+        private void TBoxSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateProducts();
+        }
+
+        private void RBTop_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateProducts();
+        }
+
+        private void RBBottom_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateProducts();
+        }
+
+        private void RBClear_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateProducts();
+        }
+
+        private void DiscountFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdateProducts();
         }
     }
 }
