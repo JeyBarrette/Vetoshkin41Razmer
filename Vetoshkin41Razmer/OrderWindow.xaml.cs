@@ -19,9 +19,20 @@ namespace Vetoshkin41Razmer
     /// </summary>
     public partial class OrderWindow : Window
     {
-        public OrderWindow()
+        List<OrderProduct> selectedOrderProducts = new List<OrderProduct>();
+        List<Product> selectedProducts = new List<Product>();
+        private Order currentOrder = new Order();
+        private OrderProduct currentOrderProduct = new OrderProduct();
+        public OrderWindow(List<OrderProduct> selectedOrderProducts, List<Product> selectedProducts, string FIO)
         {
             InitializeComponent();
+            PickupCombo.SelectedIndex = 0;
+            var currentPickups = Vetoshkin_41razmerEntities.GetContext().PickupPoint.ToList();
+            //PickupCombo.ItemsSource = currentPickups;
+
+            ClientTB.Text = FIO;
+            //TBOrderID.Text = selectedOrderProducts.First().OrderID.ToString();
+
         }
     }
 }

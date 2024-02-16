@@ -130,17 +130,29 @@ namespace Vetoshkin41Razmer
             if (ProductListView.SelectedIndex >= 0)
             {
                 var prod = ProductListView.SelectedItem as Product;
-                currentOrderProds = Vetoshkin_41razmerEntities.GetContext().OrderProduct.ToList();
-                if (newOrderID == 0)
+                selectedProducts.Add(prod);
+
+                var newOrderProd = new OrderProduct();
+                newOrderProd.OrderID = newOrderID;
+                newOrderProd.ProductArticleNumber = prod.ProductArticleNumber;
+                newOrderProd.Quantity = 1;
+
+                var selOP = currentOrderProds.Where(p => Equals(p.ProductArticleNumber, prod.ProductArticleNumber));
+                if (selOP.Count() == 0)
                 {
-                    int maxID = currentOrderProds.Max(p => p.OrderID);
-                    newOrderID = maxID + 1;
-                    newOrderProd.OrderID = newOrderID;
-                    newOrderProd.ProductArticleNumber = prod.ProductArticleNumber;
-                    newOrderProd.Quantity = 1;
+                    currentOrderProds.Add(newOrderProd);
+                }
+                else
+                {
+                    foreach(OrderProduct p in currentOrderProds)
+                    {
+                        if (p.ProductArticleNumber == prod.ProductArticleNumber)
+                            p.Quantity++;
+                    }
                 }
 
-                //var filtrOrderProds = currentOrderProds.Where
+                CheckOrderBTN.Visibility = Visibility.Visible;
+                ProductListView.SelectedIndex = -1;
             }
         }
 
@@ -151,7 +163,9 @@ namespace Vetoshkin41Razmer
 
         private void CheckOrderBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            selectedProducts = selectedProducts.Distinct().ToList();
+            OrderWindow orderWindow = new OrderWindow(currentOrderProds, selectedProducts, FIOTB.Text);
+            orderWindow.ShowDialog();
         }
     }
 }

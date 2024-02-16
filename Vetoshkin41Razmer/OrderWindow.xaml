@@ -5,8 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vetoshkin41Razmer"
         mc:Ignorable="d"
-        Title="OrderWindow" Height="450" Width="800">
+        Title="Просмотр заказа" Height="600" Width="980" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Дата формирования заказа" FontSize="18" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Margin="10, 0"></TextBlock>
+        <TextBlock Text="Дата доставки заказа" FontSize="18" Grid.Row="1" Grid.Column="0" Margin="10, 0"></TextBlock>
+        <TextBlock Text="ФИО клиента" FontSize="18" Grid.Row="2" Grid.Column="0" Margin="10, 0"></TextBlock>
+        <TextBlock Text="Номер заказа" FontSize="18" Grid.Row="3" Grid.Column="0" Margin="10, 0"></TextBlock>
+        <TextBlock Text="Пункт выдачи" FontSize="18" Grid.Row="5" Grid.Column="0" Margin="10, 0"></TextBlock>
         
+        <TextBox Name="ClientTB" FontSize="18" Grid.Row="2" Grid.Column="1"></TextBox>
+        <TextBox Name="TBOrderID" FontSize="18" Grid.Row="3" Grid.Column="1"></TextBox>
+        
+        <DatePicker Name="FormationDate" Text="Выбор даты" FontFamily="Comic Sans MS" FontSize="18" Grid.Row="0" Grid.Column="1"></DatePicker>
+        <DatePicker Name="DeliveryDate" Text="Выбор даты" FontFamily="Comic Sans MS" FontSize="18" Grid.Row="1" Grid.Column="1"></DatePicker>
+        
+        <ComboBox Name="PickupCombo" Width="750" FontSize="18" HorizontalAlignment="Left" Grid.Row="5" Grid.Column="1">
+            <TextBlock> Выбор пункта выдачи</TextBlock>
+        </ComboBox>
+
+        <ListView Name="ShoeListView" Grid.Row="4">
+            
+        </ListView>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
     </Grid>
 </Window>

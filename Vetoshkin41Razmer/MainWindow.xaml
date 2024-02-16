@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vetoshkin41Razmer"
         mc:Ignorable="d"
-        Title="Vetoshkin41Razmer" Height="600" Width="980" Icon="Images/icon.ico" MinHeight="600" MinWidth="980" FontFamily="Comic Sans MS">
+        Title="Vetoshkin41Razmer" Height="600" Width="980" Icon="Images/icon.ico" MinHeight="600" MinWidth="980" FontFamily="Comic Sans MS" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="75"></RowDefinition>
