@@ -32,7 +32,7 @@ namespace Vetoshkin41Razmer
             UserPassword.Text = "";
         }
 
-        private void Login_Click(object sender, RoutedEventArgs e)
+        private async void Login_Click(object sender, RoutedEventArgs e)
         {
             string login = UserLogin.Text;
             string password = UserPassword.Text;
@@ -53,7 +53,10 @@ namespace Vetoshkin41Razmer
             else
             {
                 MessageBox.Show("Введены неверные данные");
+                UserLogin.Text = "";
+                UserPassword.Text = "";
                 Login.IsEnabled = false;
+                await Task.Delay(5000);
                 Login.IsEnabled = true;
             }
         }

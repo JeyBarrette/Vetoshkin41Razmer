@@ -34,11 +34,11 @@ namespace Vetoshkin41Razmer
                 switch (user.UserRole)
                 {
                     case 1:
-                        RoleTB.Text = "Клиент"; break;
-                    case 2:
-                        RoleTB.Text = "Менеджер"; break;
-                    case 3:
                         RoleTB.Text = "Администратор"; break;
+                    case 2:
+                        RoleTB.Text = "Клиент"; break;
+                    case 3:
+                        RoleTB.Text = "Менеджер"; break;
                 }
             }
 
