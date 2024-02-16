@@ -118,5 +118,40 @@ namespace Vetoshkin41Razmer
         {
             UpdateProducts();
         }
+
+
+        private List<OrderProduct> currentOrderProds = new List<OrderProduct>();
+        private List<Product> selectedProducts = new List<Product>();
+        private OrderProduct newOrderProd = new OrderProduct();
+        int newOrderID = 0;
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (ProductListView.SelectedIndex >= 0)
+            {
+                var prod = ProductListView.SelectedItem as Product;
+                currentOrderProds = Vetoshkin_41razmerEntities.GetContext().OrderProduct.ToList();
+                if (newOrderID == 0)
+                {
+                    int maxID = currentOrderProds.Max(p => p.OrderID);
+                    newOrderID = maxID + 1;
+                    newOrderProd.OrderID = newOrderID;
+                    newOrderProd.ProductArticleNumber = prod.ProductArticleNumber;
+                    newOrderProd.Quantity = 1;
+                }
+
+                //var filtrOrderProds = currentOrderProds.Where
+            }
+        }
+
+        private void CheckOrderBTN_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
+        }
+
+        private void CheckOrderBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -33,14 +33,17 @@
         <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
             <StackPanel Margin="5" Orientation="Horizontal">
 
-                <TextBlock Name="ProdCount" Text="кол-во "></TextBlock>
-                <TextBlock Name="ProdRN" Text=""></TextBlock>
-                <TextBlock Text=" из "></TextBlock>
-                <TextBlock Name="ProdOverall" Text=""></TextBlock>
-                
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Name="ProdCount" Text="кол-во "></TextBlock>
+                    <TextBlock Name="ProdRN" Text=""></TextBlock>
+                    <TextBlock Text=" из "></TextBlock>
+                    <TextBlock Name="ProdOverall" Text=""></TextBlock>
+                </StackPanel>
+
                 <StackPanel Orientation="Vertical" Margin="15, 0">
                     <TextBlock Name="SearchBarText" Text="поиск по наименованию" FontSize="20"></TextBlock>
                     <TextBox Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged" Width="240" FontSize="20" FontFamily="Comic Sant MS"></TextBox>
+                    <Button Name="CheckOrderBTN" Content="Просмотр заказа" Margin="15" IsVisibleChanged="CheckOrderBTN_IsVisibleChanged" Click="CheckOrderBTN_Click"></Button>
                 </StackPanel>
 
                 <StackPanel HorizontalAlignment="Left" Orientation="Vertical" Margin="5">
@@ -63,6 +66,11 @@
         </WrapPanel>
         
         <ListView Name="ProductListView" Grid.Row="2">
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Добавить к заказу" Click="MenuItem_Click"></MenuItem>
+                </ContextMenu>
+            </ListView.ContextMenu>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
