@@ -15,5 +15,9 @@
             <Setter Property="FontSize" Value="20"></Setter>
             <Setter Property="FontFamily" Value="Comic Sans MS"></Setter>
         </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="FontFamily" Value="Comic Sans MS"></Setter>
+        </Style>
     </Application.Resources>
 </Application>
