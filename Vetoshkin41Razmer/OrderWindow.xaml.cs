@@ -57,24 +57,34 @@ namespace Vetoshkin41Razmer
 
         private void BtnMinus_Click(object sender, RoutedEventArgs e)
         {
-            //var prod = (sender as Button).DataContext as Product;
-            //prod.ProductQuantityInStock--;
-            //var selectedOP = selectedOrderProducts.FirstOrDefault(p => p.ProductArticleNumber == prod.ProductArticleNumber);
-            //int index = selectedOrderProducts.IndexOf(selectedOP);
-            //selectedOrderProducts[index].Quantity--;
-            ////SetDeliveryDate();
-            //ShoeOrderList.Items.Refresh();
+            var prod = (sender as Button).DataContext as Product;
+            prod.Quantity--;
+            if (prod.Quantity < 1)
+                MessageBox.Show("Товаров не может быть меньше одного.");
+            else
+            {
+                var selectedOP = selectedOrderProducts.FirstOrDefault(p => p.ProductArticleNumber == prod.ProductArticleNumber);
+                int index = selectedOrderProducts.IndexOf(selectedOP);
+                selectedOrderProducts[index].Quantity--;
+                //SetDeliveryDate();
+                ShoeOrderList.Items.Refresh();
+            }
         }
 
         private void BtnPlus_Click(object sender, RoutedEventArgs e)
         {
             var prod = (sender as Button).DataContext as Product;
-            prod.ProductQuantityInStock++;
-            var selectedOP = selectedOrderProducts.FirstOrDefault(p => p.ProductArticleNumber == prod.ProductArticleNumber);
-            int index = selectedOrderProducts.IndexOf(selectedOP);
-            selectedOrderProducts[index].Quantity++;
-            //SetDeliveryDate();
-            ShoeOrderList.Items.Refresh();
+            prod.Quantity++;
+            if (prod.Quantity > prod.ProductQuantityInStock)
+                MessageBox.Show("Недостаточно товаров на складе.");
+            else
+            {
+                var selectedOP = selectedOrderProducts.FirstOrDefault(p => p.ProductArticleNumber == prod.ProductArticleNumber);
+                int index = selectedOrderProducts.IndexOf(selectedOP);
+                selectedOrderProducts[index].Quantity++;
+                //SetDeliveryDate();
+                ShoeOrderList.Items.Refresh();
+            }
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vetoshkin41Razmer"
         mc:Ignorable="d"
-        Title="Просмотр заказа" Height="600" Width="980" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Просмотр заказа" Height="600" Width="980" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Images/icon.ico">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"></RowDefinition>
