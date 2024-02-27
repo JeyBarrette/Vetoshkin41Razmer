@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,13 +27,54 @@ namespace Vetoshkin41Razmer
         public OrderWindow(List<OrderProduct> selectedOrderProducts, List<Product> selectedProducts, string FIO)
         {
             InitializeComponent();
-            PickupCombo.SelectedIndex = 0;
             var currentPickups = Vetoshkin_41razmerEntities.GetContext().PickupPoint.ToList();
-            //PickupCombo.ItemsSource = currentPickups;
+            PickupCombo.ItemsSource = currentPickups.Select(x => $"{x.OrderPickupPointID}, {x.City}, {x.Adress}, {x.HouseNumber}");
 
             ClientTB.Text = FIO;
-            //TBOrderID.Text = selectedOrderProducts.First().OrderID.ToString();
+            TBOrderID.Text = selectedOrderProducts.First().OrderID.ToString();
 
+            ShoeOrderList.ItemsSource = selectedProducts;
+            foreach (Product p in selectedProducts)
+            {
+                p.Quantity = 1;
+                foreach (OrderProduct q in selectedOrderProducts)
+                {
+                    if (p.ProductArticleNumber == q.ProductArticleNumber)
+                        p.Quantity = q.Quantity;
+                }
+            }
+
+            this.selectedOrderProducts = selectedOrderProducts;
+            this.selectedProducts = selectedProducts;
+            FormationDate.Text = DateTime.Now.ToString();
+            //SetDeliveryDate();
+        }
+
+        private void SaveBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnMinus_Click(object sender, RoutedEventArgs e)
+        {
+            //var prod = (sender as Button).DataContext as Product;
+            //prod.ProductQuantityInStock--;
+            //var selectedOP = selectedOrderProducts.FirstOrDefault(p => p.ProductArticleNumber == prod.ProductArticleNumber);
+            //int index = selectedOrderProducts.IndexOf(selectedOP);
+            //selectedOrderProducts[index].Quantity--;
+            ////SetDeliveryDate();
+            //ShoeOrderList.Items.Refresh();
+        }
+
+        private void BtnPlus_Click(object sender, RoutedEventArgs e)
+        {
+            var prod = (sender as Button).DataContext as Product;
+            prod.ProductQuantityInStock++;
+            var selectedOP = selectedOrderProducts.FirstOrDefault(p => p.ProductArticleNumber == prod.ProductArticleNumber);
+            int index = selectedOrderProducts.IndexOf(selectedOP);
+            selectedOrderProducts[index].Quantity++;
+            //SetDeliveryDate();
+            ShoeOrderList.Items.Refresh();
         }
     }
 }

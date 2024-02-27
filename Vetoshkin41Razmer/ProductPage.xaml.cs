@@ -47,6 +47,7 @@ namespace Vetoshkin41Razmer
             ProdOverall.Text = Convert.ToString(currentProducts.Count);
             DiscountFilter.SelectedIndex = 0;
             RBClear.IsChecked = true;
+            CheckOrderBTN.Visibility = Visibility.Hidden;
             UpdateProducts();
         }
 
@@ -123,7 +124,7 @@ namespace Vetoshkin41Razmer
         private List<OrderProduct> currentOrderProds = new List<OrderProduct>();
         private List<Product> selectedProducts = new List<Product>();
         private OrderProduct newOrderProd = new OrderProduct();
-        int newOrderID = 0;
+        int newOrderID = 11;
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
@@ -158,7 +159,10 @@ namespace Vetoshkin41Razmer
 
         private void CheckOrderBTN_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-
+            //if ()
+            //    CheckOrderBTN.Visibility = Visibility.Visible;
+            //else
+            //    CheckOrderBTN.Visibility = Visibility.Hidden;
         }
 
         private void CheckOrderBTN_Click(object sender, RoutedEventArgs e)
