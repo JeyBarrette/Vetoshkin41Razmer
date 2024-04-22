@@ -82,3 +82,7 @@ D:\3 курс\ИСП-3221\Ветошкин\18\Vetoshkin41razmer\Vetoshkin41Razme
 D:\3 курс\ИСП-3221\Ветошкин\18\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\AuthPage.baml
 D:\3 курс\ИСП-3221\Ветошкин\18\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\OrderWindow.g.cs
 D:\3 курс\ИСП-3221\Ветошкин\18\Vetoshkin41razmer\Vetoshkin41Razmer\obj\Debug\OrderWindow.baml
+C:\Users\olegp\source\repos\Vetoshkin41Razmer\Vetoshkin41Razmer\obj\Debug\AuthPage.g.cs
+C:\Users\olegp\source\repos\Vetoshkin41Razmer\Vetoshkin41Razmer\obj\Debug\OrderWindow.g.cs
+C:\Users\olegp\source\repos\Vetoshkin41Razmer\Vetoshkin41Razmer\obj\Debug\AuthPage.baml
+C:\Users\olegp\source\repos\Vetoshkin41Razmer\Vetoshkin41Razmer\obj\Debug\OrderWindow.baml

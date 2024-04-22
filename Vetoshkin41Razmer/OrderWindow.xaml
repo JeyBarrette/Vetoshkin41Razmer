@@ -12,6 +12,7 @@
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
@@ -21,21 +22,23 @@
         <TextBlock Text="Дата доставки заказа" FontSize="18" Grid.Row="1" Grid.Column="0" Margin="10, 0"></TextBlock>
         <TextBlock Text="ФИО клиента" FontSize="18" Grid.Row="2" Grid.Column="0" Margin="10, 0"></TextBlock>
         <TextBlock Text="Номер заказа" FontSize="18" Grid.Row="3" Grid.Column="0" Margin="10, 0"></TextBlock>
-        <TextBlock Text="Пункт выдачи" FontSize="18" Grid.Row="5" Grid.Column="0" Margin="10, 0"></TextBlock>
+        <TextBlock Text="Стоимость заказа" FontSize="18" Grid.Row="4" Grid.Column="0" Margin="10, 0"></TextBlock>
+        <TextBlock Text="Пункт выдачи" FontSize="18" Grid.Row="6" Grid.Column="0" Margin="10, 0"></TextBlock>
         
         <TextBlock Name="ClientTB" FontSize="18" Grid.Row="2" Grid.Column="1"></TextBlock>
         <TextBlock Name="TBOrderID" FontSize="18" Grid.Row="3" Grid.Column="1"></TextBlock>
+        <TextBlock Name="TotalCost" FontSize="18" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left"/>
         
         <DatePicker Name="FormationDate" Text="Выбор даты" FontFamily="Comic Sans MS" FontSize="18" Grid.Row="0" Grid.Column="1"></DatePicker>
         <DatePicker Name="DeliveryDate" Text="Выбор даты" FontFamily="Comic Sans MS" FontSize="18" Grid.Row="1" Grid.Column="1"></DatePicker>
         
-        <ComboBox Name="PickupCombo" Width="765" FontSize="18" HorizontalAlignment="Left" Grid.Row="5" Grid.Column="1" IsReadOnly="True">
+        <ComboBox Name="PickupCombo" Width="765" FontSize="18" HorizontalAlignment="Left" Grid.Row="6" Grid.Column="1" IsReadOnly="True">
 
         </ComboBox>
 
-        <Button Name="SaveBtn" Content="Сохранить" FontSize="18" Grid.Row="6" Grid.Column="1" Click="SaveBtn_Click"></Button>
+        <Button Name="SaveBtn" Content="Сохранить" FontSize="18" Grid.Row="7" Grid.Column="1" Click="SaveBtn_Click"></Button>
 
-        <ListView Name="ShoeOrderList" Grid.Row="4" Grid.ColumnSpan="2">
+        <ListView Name="ShoeOrderList" Grid.Row="5" Grid.ColumnSpan="2">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -45,6 +48,7 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
@@ -67,11 +71,17 @@
                         <TextBlock Text="{Binding ProductDescription}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap"></TextBlock>
                         <TextBlock Text="{Binding ProductManufacturer}" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left"></TextBlock>
                         <TextBlock Text="{Binding ProductCost}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left"></TextBlock>
+                        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left">
+                            <TextBlock Text="В наличии "></TextBlock>
+                            <TextBlock Text="{Binding ProductQuantityInStock}"/>
+                            <TextBlock Text=" шт."/>
+                        </StackPanel>
 
-                        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1">
+                        <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="1">
                             <Button Name="BtnMinus" Content="-" Width="20" Click="BtnMinus_Click"></Button>
                             <TextBlock Text="{Binding Quantity}" Margin="5"></TextBlock>
                             <Button Name="BtnPlus" Content="+" Width="20" Click="BtnPlus_Click"></Button>
+                            <Button Name="BtnDelete" Content="Удалить" HorizontalAlignment="Right" Margin="10, 0" Click="BtnDelete_Click"></Button>
                         </StackPanel>
 
                         <StackPanel Orientation="Vertical" Grid.Column="2" VerticalAlignment="Center" Grid.RowSpan="3">

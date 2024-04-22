@@ -20,9 +20,22 @@ namespace Vetoshkin41Razmer
     /// </summary>
     public partial class ProductPage : Page
     {
+        User currentUser;
+        int newOrderId;
+
+        List<OrderProduct> selectedOrderProducts = new List<OrderProduct>();
+        List<Product> selectedProducts = new List<Product>();
+
         public ProductPage(User user)
         {
             InitializeComponent();
+
+            if (selectedProducts.Count == 0)
+            {
+                CheckOrderBTN.Visibility = Visibility.Hidden;
+            }
+            currentUser = user;
+
             if (user == null)
             {
                 FIOTB.Text = "Гость";
@@ -42,12 +55,20 @@ namespace Vetoshkin41Razmer
                 }
             }
 
-            var currentProducts = Vetoshkin_41razmerEntities.GetContext().Product.ToList();
+            List<Product> currentProducts = Vetoshkin_41razmerEntities.GetContext().Product.ToList();
             ProductListView.ItemsSource = currentProducts;
+
+            List<Order> allOrder = Vetoshkin_41razmerEntities.GetContext().Order.ToList();
+            List<int> allOrderId = new List<int>();
+            foreach (var p in allOrder.Select(x => $"{x.OrderID}").ToList())
+            {
+                allOrderId.Add(Convert.ToInt32(p));
+            }
+
+            newOrderId = allOrderId.Max() + 1;
             ProdOverall.Text = Convert.ToString(currentProducts.Count);
             DiscountFilter.SelectedIndex = 0;
             RBClear.IsChecked = true;
-            CheckOrderBTN.Visibility = Visibility.Hidden;
             UpdateProducts();
         }
 
@@ -55,6 +76,11 @@ namespace Vetoshkin41Razmer
         {
             var currentProducts = Vetoshkin_41razmerEntities.GetContext().Product.ToList();
             currentProducts = currentProducts.Where(p => p.ProductName.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
+
+            if (selectedProducts.Count > 0)
+            {
+                CheckOrderBTN.Visibility = Visibility.Visible;
+            }
 
             if (RBClear.IsChecked.Value)
             {
@@ -93,6 +119,10 @@ namespace Vetoshkin41Razmer
 
             ProdRN.Text = Convert.ToString(currentProducts.Count);
             ProductListView.ItemsSource = currentProducts;
+            if (selectedProducts.Count == 0)
+            {
+                CheckOrderBTN.Visibility = Visibility.Hidden;
+            }
         }
 
         private void TBoxSearch_TextChanged(object sender, TextChangedEventArgs e)
@@ -120,32 +150,27 @@ namespace Vetoshkin41Razmer
             UpdateProducts();
         }
 
-
-        private List<OrderProduct> currentOrderProds = new List<OrderProduct>();
-        private List<Product> selectedProducts = new List<Product>();
-        private OrderProduct newOrderProd = new OrderProduct();
-        int newOrderID = 11;
-
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             if (ProductListView.SelectedIndex >= 0)
             {
                 var prod = ProductListView.SelectedItem as Product;
-                selectedProducts.Add(prod);
 
                 var newOrderProd = new OrderProduct();
-                newOrderProd.OrderID = newOrderID;
+                newOrderProd.OrderID = newOrderId;
+
                 newOrderProd.ProductArticleNumber = prod.ProductArticleNumber;
                 newOrderProd.Quantity = 1;
+                var selOP = selectedOrderProducts.Where(p => Equals(p.ProductArticleNumber, prod.ProductArticleNumber));
 
-                var selOP = currentOrderProds.Where(p => Equals(p.ProductArticleNumber, prod.ProductArticleNumber));
                 if (selOP.Count() == 0)
                 {
-                    currentOrderProds.Add(newOrderProd);
+                    selectedOrderProducts.Add(newOrderProd);
+                    selectedProducts.Add(prod);
                 }
                 else
                 {
-                    foreach(OrderProduct p in currentOrderProds)
+                    foreach (OrderProduct p in selectedOrderProducts)
                     {
                         if (p.ProductArticleNumber == prod.ProductArticleNumber)
                             p.Quantity++;
@@ -154,6 +179,7 @@ namespace Vetoshkin41Razmer
 
                 CheckOrderBTN.Visibility = Visibility.Visible;
                 ProductListView.SelectedIndex = -1;
+                UpdateProducts();
             }
         }
 
@@ -167,9 +193,9 @@ namespace Vetoshkin41Razmer
 
         private void CheckOrderBTN_Click(object sender, RoutedEventArgs e)
         {
-            selectedProducts = selectedProducts.Distinct().ToList();
-            OrderWindow orderWindow = new OrderWindow(currentOrderProds, selectedProducts, FIOTB.Text);
+            OrderWindow orderWindow = new OrderWindow(selectedOrderProducts, selectedProducts, FIOTB.Text);
             orderWindow.ShowDialog();
+            UpdateProducts();
         }
     }
 }

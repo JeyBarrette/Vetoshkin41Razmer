@@ -34,7 +34,7 @@ namespace Vetoshkin41Razmer
         public string ProductPhoto { get; set; }
         public string ProductStatus { get; set; }
         public int Quantity { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderProduct> OrderProduct { get; set; }
     }

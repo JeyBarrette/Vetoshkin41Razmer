@@ -68,40 +68,40 @@
       <DependentUpon>AuthPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Order.cs">
-      <DependentUpon>Vetoshkin41Model.tt</DependentUpon>
+      <DependentUpon>Vetoshkin_41razmer.tt</DependentUpon>
     </Compile>
     <Compile Include="OrderProduct.cs">
-      <DependentUpon>Vetoshkin41Model.tt</DependentUpon>
+      <DependentUpon>Vetoshkin_41razmer.tt</DependentUpon>
     </Compile>
     <Compile Include="OrderWindow.xaml.cs">
       <DependentUpon>OrderWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="PickupPoint.cs">
-      <DependentUpon>Vetoshkin41Model.tt</DependentUpon>
+      <DependentUpon>Vetoshkin_41razmer.tt</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
-      <DependentUpon>Vetoshkin41Model.tt</DependentUpon>
+      <DependentUpon>Vetoshkin_41razmer.tt</DependentUpon>
     </Compile>
     <Compile Include="Role.cs">
-      <DependentUpon>Vetoshkin41Model.tt</DependentUpon>
+      <DependentUpon>Vetoshkin_41razmer.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>Vetoshkin41Model.tt</DependentUpon>
+      <DependentUpon>Vetoshkin_41razmer.tt</DependentUpon>
     </Compile>
-    <Compile Include="Vetoshkin41Model.Context.cs">
+    <Compile Include="Vetoshkin_41razmer.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Vetoshkin41Model.Context.tt</DependentUpon>
+      <DependentUpon>Vetoshkin_41razmer.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Vetoshkin41Model.cs">
+    <Compile Include="Vetoshkin_41razmer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Vetoshkin41Model.tt</DependentUpon>
+      <DependentUpon>Vetoshkin_41razmer.tt</DependentUpon>
     </Compile>
-    <Compile Include="Vetoshkin41Model.Designer.cs">
+    <Compile Include="Vetoshkin_41razmer.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Vetoshkin41Model.edmx</DependentUpon>
+      <DependentUpon>Vetoshkin_41razmer.edmx</DependentUpon>
     </Compile>
     <Page Include="AddEditPage.xaml">
       <SubType>Designer</SubType>
@@ -162,12 +162,12 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <EntityDeploy Include="Vetoshkin41Model.edmx">
+    <EntityDeploy Include="Vetoshkin_41razmer.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Vetoshkin41Model.Designer.cs</LastGenOutput>
+      <LastGenOutput>Vetoshkin_41razmer.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Vetoshkin41Model.edmx.diagram">
-      <DependentUpon>Vetoshkin41Model.edmx</DependentUpon>
+    <None Include="Vetoshkin_41razmer.edmx.diagram">
+      <DependentUpon>Vetoshkin_41razmer.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -196,15 +196,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Vetoshkin41Model.Context.tt">
+    <Content Include="Vetoshkin_41razmer.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Vetoshkin41Model.edmx</DependentUpon>
-      <LastGenOutput>Vetoshkin41Model.Context.cs</LastGenOutput>
+      <DependentUpon>Vetoshkin_41razmer.edmx</DependentUpon>
+      <LastGenOutput>Vetoshkin_41razmer.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Vetoshkin41Model.tt">
+    <Content Include="Vetoshkin_41razmer.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Vetoshkin41Model.edmx</DependentUpon>
-      <LastGenOutput>Vetoshkin41Model.cs</LastGenOutput>
+      <DependentUpon>Vetoshkin_41razmer.edmx</DependentUpon>
+      <LastGenOutput>Vetoshkin_41razmer.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

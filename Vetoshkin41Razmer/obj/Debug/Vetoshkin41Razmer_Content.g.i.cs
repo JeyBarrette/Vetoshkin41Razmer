@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("vetoshkin41model.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("vetoshkin41model.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("vetoshkin_41razmer.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("vetoshkin_41razmer.tt")]
 
 
